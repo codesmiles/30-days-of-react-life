@@ -106,3 +106,69 @@ const everyPriceValue = () => {
   return products.every((product) => Number.isInteger(product.price));
 };
 console.log(everyPriceValue());
+
+// CODEWAR CRUISE LOL
+
+// Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+function squareDigits(num) {
+  let myArr = num.toString().split('');
+  let newArr = myArr.map(function (x) {
+    return x * x;
+  });
+ return newArr.join(''); 
+}
+
+console.log(squareDigits(9119));
+
+
+// for (var x = 0; x < 2; x++) {
+//   for (var y = 0; y < 10; y++) {
+//     console.log("x: " + x + ", y: " + y);
+//   }
+// }
+
+// Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
+function getSum(a, b) {
+  //Good luck!
+  let sum = 0;
+  if (a === b) {
+    return a;
+  } else if (a < b) {
+    for (let i = a; i <= b; i++) {
+      console.log(i);
+      sum += i;
+    }
+  } else {    // a > b
+    for (let i = b; i <= a; i++) {
+      console.log(i);
+      sum += i;
+    }
+  } return sum;
+}
+console.log(getSum(-3, 0));
+
+// Your task is to create a function that does four basic mathematical operations.
+// The function should take three arguments - operation(string/char), value1(number), value2(number).
+// The function should return result of numbers after applying the chosen operation.
+function basicOp(operation, value1, value2) {
+  // Code
+  if (Number.isInteger(value1) && Number.isInteger(value2)) {
+    if (operation === "+") {
+      return value1 + value2;
+    } else if (operation === "-") {
+      return value1 - value2;
+    } else if (operation === "*") {
+      return value1 * value2;
+    } else if (operation === "/") {
+      return value1 / value2;
+    }
+  } else {
+    if (!Number.isInteger(value1)) {
+      return `warning ${value1} is not an integer`;
+    } else if (!Number.isInteger(value2)) {
+      return `warning ${value1} is not an integer`;
+    } else {
+      return false;
+    }
+  }
+}

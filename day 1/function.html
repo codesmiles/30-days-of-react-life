@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <p>
+        Please enter the text showned in the imag first and then click "continue Download button"
+    </p>
+    <p class="text">
+
+    </p>
+    <form action="" method="get">
+        <input type="text" name="captcha" id="captcha" />
+        <input type="submit" value="Continue Download" />
+    </form>
+
+    <script>
+
+const form = document.querySelector('form');
+const text = document.querySelector('.text');
+
+text.addEventListener('load', () => userIdGenerator());
+
+
+const userIdGenerator = () => {
+            let alphabet = "abcdefghijklmnopqrstuvwxyz";
+            let upperAlphabet = alphabet.toUpperCase();
+            let numbers = "0123456789";
+            let numberAndAlphabet = alphabet + upperAlphabet + numbers;
+            numberAndAlphabet = numberAndAlphabet.split("");
+
+            userId = [];
+            for (i = 0; i < 7; i++) {
+                userId.push(numberAndAlphabet[Math.floor(Math.random() * numberAndAlphabet.length)]);
+            }
+            return userId.join("");
+        };
+    </script>
+</body>
+
+</html>
